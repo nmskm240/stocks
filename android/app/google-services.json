@@ -29,6 +29,13 @@
             {
               "client_id": "1053697304542-4n36mnc7ceh6cg7ojotodi9n00bugd02.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1053697304542-3qco730gtnr7a04m0p4ed0ajpd62cfnc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stocks"
+              }
             }
           ]
         }
