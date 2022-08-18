@@ -17,12 +17,15 @@ class EmailSingupPage extends StatelessWidget {
                   submitButtonText: "新規登録",
                   onComplet: (email, password) async {
                     try {
-                      final credential =  await Authetication.email.trySingup(email, password);
-                      print(credential.user!.uid);
+                      final credential =
+                          await Authetication.email.trySingup(email, password);
+                      // ignore: use_build_context_synchronously
+                      Navigator.pushNamed(context, "/main",
+                          arguments: credential);
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'email-already-in-use:') {
                         //TODO: User email already used process
-                      } 
+                      }
                     }
                   },
                 ),

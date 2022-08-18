@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:stocks/pages/start_page.dart';
+import 'package:stocks/pages/email_login_page.dart';
+import 'package:stocks/pages/email_singup_page.dart';
+import 'package:stocks/pages/auth_page.dart';
+import 'package:stocks/pages/main_page.dart';
 
 import 'firebase/firebase_options.dart';
 
@@ -18,11 +21,17 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Stocks',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StartPage(),
+      initialRoute: "/auth",
+      routes: {
+        "/auth": (context) => AuthPage(),
+        "/auth/login": (context) => EmailLoginPage(),
+        "/auth/singup": (context) => EmailSingupPage(),
+        "/main": (context) => MainPage(),
+      },
     );
   }
 }

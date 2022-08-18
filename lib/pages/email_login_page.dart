@@ -17,8 +17,11 @@ class EmailLoginPage extends StatelessWidget {
                   submitButtonText: "ログイン",
                   onComplet: (email, password) async {
                     try {
-                      final credential =  await Authetication.email.tryLogin(email, password);
-                      print(credential.user!.uid);
+                      final credential =
+                          await Authetication.email.tryLogin(email, password);
+                      // ignore: use_build_context_synchronously
+                      Navigator.pushNamed(context, "/main",
+                          arguments: credential);
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'user-not-found') {
                         //TODO: No user found for that email process
