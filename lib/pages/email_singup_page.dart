@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stocks/utils/authetication.dart';
 import 'package:stocks/widgets/email_and_password_form.dart';
 
-class SinginPage extends StatelessWidget {
+class EmailSingupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class SinginPage extends StatelessWidget {
                   submitButtonText: "新規登録",
                   onComplet: (email, password) async {
                     try {
-                      final credential =  await Authetication.email.tryRegist(email, password);
+                      final credential =  await Authetication.email.trySingup(email, password);
                       print(credential.user!.uid);
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'email-already-in-use:') {

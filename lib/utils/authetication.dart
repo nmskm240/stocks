@@ -12,14 +12,14 @@ abstract class Authenticator {
   ///Use [email] and [password] only for email authentication.
   Future<UserCredential> tryLogin([String? email, String? password]);
 
-  ///Regist process.
+  ///Singup process.
   ///Use [email] and [password] only for email authentication.
-  Future<UserCredential> tryRegist([String? email, String? password]);
+  Future<UserCredential> trySingup([String? email, String? password]);
 }
 
 class _Email extends Authenticator {
   @override
-  Future<UserCredential> tryRegist([String? email, String? password]) async {
+  Future<UserCredential> trySingup([String? email, String? password]) async {
     if (email == null || password == null) {
       /// Email auth need email and password
       throw Error();
@@ -54,7 +54,7 @@ class _Google extends Authenticator {
   }
 
   @override
-  Future<UserCredential> tryRegist([String? email, String? password]) {
+  Future<UserCredential> trySingup([String? email, String? password]) {
     return authFlow();
   }
 
@@ -66,7 +66,7 @@ class _Google extends Authenticator {
 
 class _Guest extends Authenticator {
   @override
-  Future<UserCredential> tryRegist([String? email, String? password]) async {
+  Future<UserCredential> trySingup([String? email, String? password]) async {
     return await FirebaseAuth.instance.signInAnonymously();
   }
 
