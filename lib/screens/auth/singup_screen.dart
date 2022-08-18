@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stocks/utils/authetication.dart';
 import 'package:stocks/widgets/email_and_password_form.dart';
 
-class EmailSingupPage extends StatelessWidget {
+class SingupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

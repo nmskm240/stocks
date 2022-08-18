@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stocks/utils/authetication.dart';
 import 'package:stocks/widgets/email_and_password_form.dart';
 
-class EmailLoginPage extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
