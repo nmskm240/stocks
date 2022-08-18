@@ -12,26 +12,18 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const App());
-}
-
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       title: 'Stocks',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/auth",
       routes: {
         "/auth": (context) => AuthPage(),
         "/auth/login": (context) => EmailLoginPage(),
         "/auth/singup": (context) => EmailSingupPage(),
         "/main": (context) => MainPage(),
       },
-    );
-  }
+    ),
+  );
 }
