@@ -11,6 +11,7 @@ class StockScreen extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text("在庫"),
         ),
+        automaticallyImplyLeading: false,
       ),
     );
   }
